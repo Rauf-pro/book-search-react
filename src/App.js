@@ -3,15 +3,20 @@ import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
 import "./App.css";
 import { AppProvider } from "./context/context";
+import BookList from "./components/BookList/BookList";
+import BookDetails from "./components/BookDetails/BookDetails";
 
 function App() {
   return (
     <>
     <AppProvider>
     <BrowserRouter>
+  
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="about" element={<About />} />
+          <Route path="book" element={<BookList/>}/>
+          <Route path="/book/:id" element={<BookDetails/>}/>
         </Routes>
       </BrowserRouter>
     </AppProvider>
